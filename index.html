@@ -160,8 +160,8 @@ html:not([lang="de"]) .de{display:none!important}
 .langs button{font:inherit;background:none;color:var(--dim);border:1px solid var(--rule);padding:6px 10px;cursor:pointer}
 .langs button+button{border-left:0}
 .langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.strip{grid-template-columns:1fr auto auto auto auto!important}
-@media (max-width:700px){.strip{grid-template-columns:1fr 1fr!important}.strip>div{border-left:0!important;padding-left:0!important;border-top:1px solid var(--rule)}.strip>div:nth-child(-n+2){border-top:0}.strip>div:nth-child(even){border-left:1px solid var(--rule)!important;padding-left:14px!important}.langs{grid-column:1/-1;justify-content:flex-start;padding:10px 0!important;border-left:0!important}}
+.strip{grid-template-columns:1fr auto auto auto auto auto!important}
+@media (max-width:700px){.strip{grid-template-columns:1fr 1fr!important}.strip>div{border-left:0!important;padding-left:0!important;border-top:1px solid var(--rule)}.strip>div:nth-child(-n+2){border-top:0}.strip>div:nth-child(even){border-left:1px solid var(--rule)!important;padding-left:14px!important}.langs{justify-content:flex-start;padding:10px 0 10px 14px!important}}
 
 /* screenshots */
 .snaps{margin-top:6px;color:var(--dim)}
@@ -182,6 +182,8 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
   :root,:root[data-theme],:root:not([data-theme="light"]){--paper:#fff;--ink:#141414;--dim:#555;--rule:#141414;--hair:#d5d1c6;--sig:#d63c14;--fill:#fff}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{font-size:9.6pt;line-height:1.42;background:#fff}
+  html[lang="de"] body{font-size:9.1pt;line-height:1.38}
+  html[lang="de"] .lede{font-size:11pt}
   .sheet{max-width:none;padding:0}
   .langs,.snaps,.noprint,.contact .big,.contact>.m,dialog{display:none!important}
   .printonly{display:block}
@@ -236,6 +238,7 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
     <div><b><span class="en">Prague, CZ</span><span class="de">Prag, CZ</span></b><span>Remote, CET</span></div>
     <div><b><a href="https://github.com/honzajscz">GitHub</a></b><span>@honzajscz</span></div>
     <div><b><a href="https://www.linkedin.com/in/vratislav/">LinkedIn</a></b><span>/in/vratislav</span></div>
+    <div class="noprint"><b><a class="en" href="cv-jan-vratislav-en.pdf" download>CV ↓</a><a class="de" href="cv-jan-vratislav-de.pdf" download>CV ↓</a></b><span>PDF</span></div>
     <div class="langs" role="group" aria-label="Language">
       <button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="de">DE</button>
     </div>
@@ -316,18 +319,20 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
             <p class="de">Leitender Entwickler von RF Studio, einer Webanwendung zur Überwachung und Konfiguration vernetzter Geräteflotten für einen Schweizer Hardwarehersteller.</p>
             <ul class="en">
               <li><strong>Project crisis management:</strong> took over a troubled project, stabilised it and brought it back on track</li>
-              <li><strong>Migration of a legacy C++/Qt application</strong> to a modern Blazor Server application on .NET 10</li>
+              <li><strong>Migration of a legacy C++/Qt desktop application</strong> to a modern Blazor Server web application on .NET 10, deployed on an embedded Linux device</li>
+              <li><strong>RF Studio in numbers:</strong> 170,000+ lines of C#/Razor in 14 projects, 3,100+ automated tests, 900+ commits since mid-2026</li>
               <li><strong>Close collaboration with the hardware team</strong> on requirements, device protocols and overall design</li>
               <li>Real-time dashboards, configuration management and device communication services</li>
-              <li><strong>Jammer Tester:</strong> automated production test station that drives signal generators, spectrum analysers and power supplies, runs test templates and produces PASS/FAIL reports</li>
+              <li><strong>Jammer Tester:</strong> automated production test station that drives signal generators, spectrum analysers and power supplies, runs test templates and produces PASS/FAIL reports. Developed since 2017: 50,000+ lines, 15 projects, 700+ automated tests</li>
               <li>Earlier engagement (2023–2024): indoor device-location software, from a WPF proof of concept to a production app with a minimal API back end</li>
             </ul>
             <ul class="de">
               <li><strong>Krisenmanagement im Projekt:</strong> Übernahme eines kriselnden Projekts, Stabilisierung und Rückführung auf Kurs</li>
-              <li><strong>Migration einer bestehenden C++/Qt-Anwendung</strong> auf eine moderne Blazor-Server-Anwendung mit .NET 10</li>
+              <li><strong>Migration einer bestehenden C++/Qt-Desktopanwendung</strong> auf eine moderne Blazor-Server-Webanwendung mit .NET 10, betrieben auf einem Embedded-Linux-Gerät</li>
+              <li><strong>RF Studio in Zahlen:</strong> über 170.000 Zeilen C#/Razor in 14 Projekten, über 3.100 automatisierte Tests, über 900 Commits seit Mitte 2026</li>
               <li><strong>Enge Zusammenarbeit mit dem Hardware-Team</strong> bei Anforderungen, Geräteprotokollen und Gesamtdesign</li>
               <li>Echtzeit-Dashboards, Konfigurationsmanagement und Services für die Gerätekommunikation</li>
-              <li><strong>Jammer Tester:</strong> automatisierter Produktionsprüfplatz, der Signalgeneratoren, Spektrumanalysatoren und Netzteile steuert, Testvorlagen ausführt und PASS/FAIL-Berichte erstellt</li>
+              <li><strong>Jammer Tester:</strong> automatisierter Produktionsprüfplatz, der Signalgeneratoren, Spektrumanalysatoren und Netzteile steuert, Testvorlagen ausführt und PASS/FAIL-Berichte erstellt. Entwickelt seit 2017: über 50.000 Zeilen, 15 Projekte, über 700 automatisierte Tests</li>
               <li>Früheres Projekt (2023–2024): Software zur Ortung von Geräten in Gebäuden, vom WPF-Prototyp bis zur produktiven App mit Minimal-API-Backend</li>
             </ul>
             <div class="stack m">.NET 10, Blazor Server, ASP.NET Core, WPF, C++/Qt migration, instrument control</div>
@@ -396,16 +401,16 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
         </div>
 
         <div class="entry">
-          <div class="when m"><b>2014 / 2017</b><span><span class="en">Prague</span><span class="de">Prag</span> / <span class="en">Switzerland</span><span class="de">Schweiz</span></span></div>
+          <div class="when m"><b>2013 – 2026</b><span><span class="en">Prague</span><span class="de">Prag</span> / <span class="en">Switzerland</span><span class="de">Schweiz</span></span></div>
           <div class="what">
             <h3>K-Technik, COMLAB, Villiger Security</h3>
             <div class="role m"><span class="fl">FREELANCE</span> <span class="en">.NET Developer &amp; Architect · side projects</span><span class="de">.NET-Entwickler &amp; Architekt · Nebenprojekte</span></div>
             <ul class="en">
-              <li><strong>Legacy migration (2014):</strong> ported a Windows XP application for hardware communication and data management to C# and WPF, including database design</li>
+              <li><strong>Legacy migration, Villiger SCM 2 (2013 to today):</strong> ported a Windows XP application for hardware communication and data management to C# and WPF, including database design and RFID/NFC reader integration. Developed and maintained for 13 years: 66,000+ lines, 23 projects, 400+ commits</li>
               <li><strong>Test automation (2017):</strong> WPF application verifying electronic components by orchestrating lab instruments, owned end to end from UX to release</li>
             </ul>
             <ul class="de">
-              <li><strong>Legacy-Migration (2014):</strong> Portierung einer Windows-XP-Anwendung für Hardwarekommunikation und Datenverwaltung nach C# und WPF, inklusive Datenbankdesign</li>
+              <li><strong>Legacy-Migration, Villiger SCM 2 (2013 bis heute):</strong> Portierung einer Windows-XP-Anwendung für Hardwarekommunikation und Datenverwaltung nach C# und WPF, inklusive Datenbankdesign und RFID/NFC-Leseranbindung. Seit 13 Jahren entwickelt und betreut: über 66.000 Zeilen, 23 Projekte, über 400 Commits</li>
               <li><strong>Testautomatisierung (2017):</strong> WPF-Anwendung zur Prüfung elektronischer Komponenten durch Steuerung von Messgeräten, komplett verantwortet von UX bis Release</li>
             </ul>
             <div class="stack m">C#, WPF, MS SQL, REST, <span class="en">hardware integration</span><span class="de">Hardwareanbindung</span></div>
