@@ -92,6 +92,9 @@ a:hover{color:var(--sig)}
 .secnote{margin-left:auto;color:var(--dim);text-align:right}
 .fl{display:inline-block;background:var(--sig);color:var(--paper);padding:1px 6px;margin-right:6px;font-size:11px;letter-spacing:.06em;font-weight:500;vertical-align:1px}
 @media (max-width:600px){.sec>header{flex-wrap:wrap}.secnote{margin-left:0;text-align:left;width:100%}}
+.cvdl{margin-top:18px!important}
+.cvdl a{color:var(--ink)}
+.printonly{display:none}
 /* capabilities matrix */
 .cap.ai{grid-column:1/-1;background:var(--ink);color:var(--paper)}
 .cap.ai .m{color:var(--sig)}
@@ -173,13 +176,63 @@ dialog.lb img{display:block;max-width:100%;max-height:calc(94vh - 44px);height:a
 dialog.lb .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 12px;border-top:1px solid var(--rule)}
 dialog.lb .nav{display:flex;gap:6px;flex-shrink:0}
 dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color:var(--ink);padding:4px 10px;cursor:pointer}
+
+@media print{
+  @page{size:A4;margin:12mm 13mm}
+  :root,:root[data-theme],:root:not([data-theme="light"]){--paper:#fff;--ink:#141414;--dim:#555;--rule:#141414;--hair:#d5d1c6;--sig:#d63c14;--fill:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:9.6pt;line-height:1.42;background:#fff}
+  .sheet{max-width:none;padding:0}
+  .langs,.snaps,.noprint,.contact .big,.contact>.m,dialog{display:none!important}
+  .printonly{display:block}
+  a{text-decoration:none}
+  .strip{grid-template-columns:1fr auto auto auto!important}
+  .strip>div{padding:6px 10px}
+  .mast{padding-top:16px}
+  .mast h1,html[lang="de"] .mast h1{font-size:58pt}
+  .photo{width:30mm}
+  .mast-row{margin-top:12px}
+  .mast-row>div{padding:12px 16px 12px 0}
+  .lede{font-size:12pt}
+  .spec td{padding:3px 0}
+  .nums>div{padding:10px 12px}
+  .nums b{font-size:28pt}
+  .sec>header{padding:14px 0 8px;break-after:avoid}
+  .sec>header h2{font-size:22pt}
+  .sec>.body{padding-bottom:14px}
+  .cap{padding:8px 10px;break-inside:avoid}
+  .cap h3{font-size:11.5pt;margin:2px 0 3px}
+  .cap p{font-size:8.8pt}
+  .entry{break-inside:avoid;grid-template-columns:30mm 1fr}
+  .entry .what{padding:8px 0 10px 12px}
+  .entry .when{padding:9px 8px 9px 0}
+  .entry h3{font-size:13pt}
+  .entry .role{margin:2px 0 6px}
+  .entry li{margin:2px 0}
+  .skt th,.skt td{padding:5px 0}
+  .skt th{width:34mm}
+  .chip{font-size:8pt;padding:1px 5px;margin-bottom:3px}
+  .ed{padding-bottom:8px;margin-bottom:8px}
+  .contact{padding:14px 0 10px;break-inside:avoid}
+  .contact p{margin-top:0}
+  footer{padding:8px 0 0}
+  #experience{break-before:page}
+  .caps{grid-template-columns:repeat(3,1fr)!important}
+  .cap.ai{grid-column:1/-1}
+  .mast-row{grid-template-columns:1.3fr 1fr!important}
+  .mast-row>div+div{border-left:1px solid var(--rule)!important;border-top:0!important;padding-left:16px!important}
+  .nums{grid-template-columns:repeat(4,1fr)!important}
+  .cols{grid-template-columns:1fr 1fr!important}
+  .contact{display:none}
+  footer{display:none}
+}
 </style>
 </head>
 <body>
 <div class="sheet">
 
   <div class="strip m">
-    <div><b>JAN VRATISLAV</b><span class="en">Freelance software developer</span><span class="de">Freelance Softwareentwickler</span></div>
+    <div><b>JAN VRATISLAV</b><span class="en">Freelance software developer</span><span class="de">Freelance Softwareentwickler</span><span class="printonly">jan.vratislav@gmail.com · honzajscz.github.io</span></div>
     <div><b><span class="en">Prague, CZ</span><span class="de">Prag, CZ</span></b><span>Remote, CET</span></div>
     <div><b><a href="https://github.com/honzajscz">GitHub</a></b><span>@honzajscz</span></div>
     <div><b><a href="https://www.linkedin.com/in/vratislav/">LinkedIn</a></b><span>/in/vratislav</span></div>
@@ -207,6 +260,7 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
           <tr><td><span class="en">Engagement</span><span class="de">Zusammenarbeit</span></td><td><span class="en">Freelance since 2010, remote</span><span class="de">Freelance seit 2010, remote</span></td></tr>
           <tr><td><span class="en">Languages</span><span class="de">Sprachen</span></td><td><span class="en">English, German, Czech</span><span class="de">Deutsch, Englisch, Tschechisch</span></td></tr>
           <tr><td><span class="en">Contact</span><span class="de">Kontakt</span></td><td><a href="mailto:jan.vratislav@gmail.com">jan.vratislav@gmail.com</a></td></tr>
+          <tr class="noprint"><td>CV</td><td><a class="en" href="cv-jan-vratislav-en.pdf" download>CV (PDF, English)</a><a class="de" href="cv-jan-vratislav-de.pdf" download>Lebenslauf (PDF, Deutsch)</a></td></tr>
         </table>
       </div>
     </div>
@@ -430,11 +484,12 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
     <a class="big" href="mailto:jan.vratislav@gmail.com"><span class="en">Write me</span><span class="de">Schreiben Sie mir</span> <span class="arr">→</span></a>
     <p class="en">Remote .NET projects of any kind: web, desktop, mobile, back end, cloud or migrations. English, German or Czech.</p>
     <p class="de">Remote-.NET-Projekte jeder Art: Web, Desktop, Mobile, Backend, Cloud oder Migrationen. Auf Deutsch, Englisch oder Tschechisch.</p>
+    <p class="cvdl m noprint">↓ <a class="en" href="cv-jan-vratislav-en.pdf" download>CV (PDF, English)</a><a class="de" href="cv-jan-vratislav-de.pdf" download>Lebenslauf (PDF, Deutsch)</a></p>
   </section>
 
   <footer class="m">
     <span>© <span id="y">2026</span> Jan Vratislav</span>
-    <span><a href="mailto:jan.vratislav@gmail.com">jan.vratislav@gmail.com</a> · <a href="https://github.com/honzajscz">GitHub</a> · <a href="https://www.linkedin.com/in/vratislav/">LinkedIn</a></span>
+    <span class="web"><a href="mailto:jan.vratislav@gmail.com">jan.vratislav@gmail.com</a> · <a href="https://github.com/honzajscz">GitHub</a> · <a href="https://www.linkedin.com/in/vratislav/">LinkedIn</a></span><span class="printonly">jan.vratislav@gmail.com · honzajscz.github.io · linkedin.com/in/vratislav · github.com/honzajscz</span>
   </footer>
 </div>
 <dialog class="lb" id="lb"><img alt=""><div class="bar m"><span class="lbcap"></span><span class="nav"><button type="button" data-prev aria-label="Previous">←</button><span class="cnt"></span><button type="button" data-next aria-label="Next">→</button><button type="button" data-close aria-label="Close">✕</button></span></div></dialog>
