@@ -93,6 +93,10 @@ a:hover{color:var(--sig)}
 .fl{display:inline-block;background:var(--sig);color:var(--paper);padding:1px 6px;margin-right:6px;font-size:11px;letter-spacing:.06em;font-weight:500;vertical-align:1px}
 @media (max-width:600px){.sec>header{flex-wrap:wrap}.secnote{margin-left:0;text-align:left;width:100%}}
 /* capabilities matrix */
+.cap.ai{grid-column:1/-1;background:var(--ink);color:var(--paper)}
+.cap.ai .m{color:var(--sig)}
+.cap.ai p{color:var(--paper);opacity:.82;max-width:860px}
+.cap.ai:hover{background:var(--ink)}
 .caps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 .cap{padding:16px 16px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .cap .m{color:var(--dim)}
@@ -191,14 +195,15 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
     </div>
     <div class="mast-row">
       <div>
-        <p class="lede en">Independent freelance .NET developer since 2010, with 15+ years across the whole stack: web, desktop, mobile, back-end services, databases, Azure and DevOps. I take software from first prototype to production, migrate legacy systems to modern .NET and automate how teams build and ship.</p>
-        <p class="lede de">Selbstständiger Freelance-.NET-Entwickler seit 2010, mit über 15 Jahren Erfahrung im gesamten Stack: Web, Desktop, Mobile, Backend-Services, Datenbanken, Azure und DevOps. Ich bringe Software vom ersten Prototyp bis in die Produktion, migriere Altsysteme auf modernes .NET und automatisiere, wie Teams Software bauen und ausliefern.</p>
+        <p class="lede en">Independent freelance .NET developer since 2010, with 15+ years across the whole stack: web, desktop, mobile, back-end services, databases, Azure, DevOps and AI integration. I take software from first prototype to production, migrate legacy systems to modern .NET and automate how teams build and ship.</p>
+        <p class="lede de">Selbstständiger Freelance-.NET-Entwickler seit 2010, mit über 15 Jahren Erfahrung im gesamten Stack: Web, Desktop, Mobile, Backend-Services, Datenbanken, Azure, DevOps und KI-Integration. Ich bringe Software vom ersten Prototyp bis in die Produktion, migriere Altsysteme auf modernes .NET und automatisiere, wie Teams Software bauen und ausliefern.</p>
       </div>
       <div>
         <table class="spec m">
           <tr><td><span class="en">Primary stack</span><span class="de">Haupt-Stack</span></td><td>C#, .NET 10, ASP.NET Core</td></tr>
           <tr><td><span class="en">Platforms</span><span class="de">Plattformen</span></td><td><span class="en">Web, desktop, mobile, server</span><span class="de">Web, Desktop, Mobile, Server</span></td></tr>
           <tr><td>Cloud</td><td>Microsoft Azure</td></tr>
+          <tr><td>AI</td><td>MCP, LLM integration, agents</td></tr>
           <tr><td><span class="en">Engagement</span><span class="de">Zusammenarbeit</span></td><td><span class="en">Freelance since 2010, remote</span><span class="de">Freelance seit 2010, remote</span></td></tr>
           <tr><td><span class="en">Languages</span><span class="de">Sprachen</span></td><td><span class="en">English, German, Czech</span><span class="de">Deutsch, Englisch, Tschechisch</span></td></tr>
           <tr><td><span class="en">Contact</span><span class="de">Kontakt</span></td><td><a href="mailto:jan.vratislav@gmail.com">jan.vratislav@gmail.com</a></td></tr>
@@ -218,22 +223,25 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
     <header><div class="no m">§ 01</div><h2 class="en">Capabilities</h2><h2 class="de">Leistungen</h2></header>
     <div class="body">
       <div class="caps">
-        <div class="cap"><span class="m">01.1</span><h3>Web &amp; APIs</h3>
+        <div class="cap ai"><span class="m">01.1 · <span class="en">NEW FOCUS</span><span class="de">NEUER SCHWERPUNKT</span></span><h3 class="en">AI development &amp; integration</h3><h3 class="de">KI-Entwicklung &amp; Integration</h3>
+          <p class="en">Bringing large language models into real products: MCP servers that connect AI assistants to internal systems and data, LLM-powered features in .NET applications (Azure OpenAI, Anthropic Claude, OpenAI APIs), document and knowledge search, and AI agents that automate business workflows. Daily AI-assisted engineering with agentic coding tools.</p>
+          <p class="de">Large Language Models produktiv einsetzen: MCP-Server, die KI-Assistenten mit internen Systemen und Daten verbinden, LLM-Funktionen in .NET-Anwendungen (Azure OpenAI, Anthropic Claude, OpenAI APIs), Dokumenten- und Wissenssuche sowie KI-Agenten zur Automatisierung von Geschäftsprozessen. Täglich KI-gestützte Entwicklung mit agentischen Coding-Tools.</p></div>
+        <div class="cap"><span class="m">01.2</span><h3>Web &amp; APIs</h3>
           <p class="en">ASP.NET Core, Blazor, MVC, Razor and Web API back ends, Angular front ends. Hosted on IIS, Docker or Azure.</p>
           <p class="de">ASP.NET Core, Blazor, MVC, Razor und Web-API-Backends, Angular-Frontends. Betrieb auf IIS, Docker oder Azure.</p></div>
-        <div class="cap"><span class="m">01.2</span><h3>Desktop &amp; Mobile</h3>
+        <div class="cap"><span class="m">01.3</span><h3>Desktop &amp; Mobile</h3>
           <p class="en">WPF, WinUI and the Uno Platform for Windows, web and mobile from one codebase.</p>
           <p class="de">WPF, WinUI und die Uno Platform für Windows, Web und Mobile aus einer Codebasis.</p></div>
-        <div class="cap"><span class="m">01.3</span><h3 class="en">Services &amp; data</h3><h3 class="de">Services &amp; Daten</h3>
+        <div class="cap"><span class="m">01.4</span><h3 class="en">Services &amp; data</h3><h3 class="de">Services &amp; Daten</h3>
           <p class="en">Windows services, WCF, REST, messaging, MS SQL Server design, hardware and device integration.</p>
           <p class="de">Windows-Dienste, WCF, REST, Messaging, MS-SQL-Server-Design, Hardware- und Geräteanbindung.</p></div>
-        <div class="cap"><span class="m">01.4</span><h3>Cloud &amp; DevOps</h3>
+        <div class="cap"><span class="m">01.5</span><h3>Cloud &amp; DevOps</h3>
           <p class="en">Azure, CI/CD in Azure DevOps and Jenkins, infrastructure as code with Terraform CDK and Pulumi.</p>
           <p class="de">Azure, CI/CD mit Azure DevOps und Jenkins, Infrastructure as Code mit Terraform CDK und Pulumi.</p></div>
-        <div class="cap"><span class="m">01.5</span><h3 class="en">Migrations</h3><h3 class="de">Migrationen</h3>
+        <div class="cap"><span class="m">01.6</span><h3 class="en">Migrations</h3><h3 class="de">Migrationen</h3>
           <p class="en">Legacy applications moved to modern .NET and new UI stacks, large codebases refactored safely.</p>
           <p class="de">Altanwendungen auf modernes .NET und neue UI-Technologien migriert, grosse Codebasen sicher refaktoriert.</p></div>
-        <div class="cap"><span class="m">01.6</span><h3 class="en">Automation</h3><h3 class="de">Automatisierung</h3>
+        <div class="cap"><span class="m">01.7</span><h3 class="en">Automation</h3><h3 class="de">Automatisierung</h3>
           <p class="en">PowerShell, build optimisation and test automation that give teams hours back every day.</p>
           <p class="de">PowerShell, Build-Optimierung und Testautomatisierung, die Teams täglich Stunden sparen.</p></div>
       </div>
@@ -385,6 +393,7 @@ dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color
         <tr><th class="m">Web</th><td><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">MVC / Razor</span><span class="chip">Web API</span><span class="chip">Angular</span></td></tr>
         <tr><th class="m">Desktop / Mobile</th><td><span class="chip">WPF</span><span class="chip">WinUI</span><span class="chip">Uno Platform</span></td></tr>
         <tr><th class="m"><span class="en">Services / data</span><span class="de">Services / Daten</span></th><td><span class="chip">MS SQL Server</span><span class="chip">IIS</span><span class="chip">Windows Server</span><span class="chip">Windows Services</span><span class="chip">WCF</span><span class="chip">REST</span><span class="chip">Solace</span></td></tr>
+        <tr><th class="m">AI / LLM</th><td><span class="chip">MCP servers</span><span class="chip">Azure OpenAI</span><span class="chip">Anthropic Claude API</span><span class="chip">OpenAI API</span><span class="chip">AI agents</span><span class="chip">Claude Code</span></td></tr>
         <tr><th class="m">Cloud / DevOps</th><td><span class="chip">Azure</span><span class="chip">Azure DevOps</span><span class="chip">Jenkins</span><span class="chip">Docker</span><span class="chip">Terraform CDK</span><span class="chip">Pulumi</span><span class="chip">SonarQube</span><span class="chip">Git</span></td></tr>
         <tr><th class="m"><span class="en">Practice</span><span class="de">Arbeitsweise</span></th><td><span class="en">Clean, testable architecture, domain-driven design, multithreaded and performance-critical code, refactoring legacy systems, NUnit and Moq, Scrum.</span><span class="de">Saubere, testbare Architektur, Domain-Driven Design, nebenläufiger und performancekritischer Code, Refactoring von Altsystemen, NUnit und Moq, Scrum.</span></td></tr>
       </table>
