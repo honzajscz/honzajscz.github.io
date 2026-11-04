@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jan Vratislav · .NET Developer</title>
+<meta name="description" content="Jan Vratislav, senior .NET developer and freelancer in Prague. Web, desktop, mobile, databases, services, Azure, DevOps and migrations.">
+<meta name="theme-color" content="#efece4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23141414'/%3E%3Ctext x='6' y='47' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='38' fill='%23efece4'%3EJV%3C/text%3E%3Crect x='50' y='40' width='8' height='8' fill='%23e8461e'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="https://honzajscz.github.io/og.png">
+<link rel="canonical" href="https://honzajscz.github.io/">
+<link rel="alternate" hreflang="en" href="https://honzajscz.github.io/">
+<link rel="alternate" hreflang="de" href="https://honzajscz.github.io/?lang=de">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://honzajscz.github.io/">
+<meta property="og:title" content="Jan Vratislav · .NET Developer">
+<meta property="og:description" content="Senior .NET developer, 15+ years across web, desktop, mobile, services, databases, Azure and DevOps. Freelance, remote.">
+<meta property="og:image" content="https://honzajscz.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#efece4; --ink:#141414; --dim:#6b675e; --rule:#141414; --hair:#cfcabd;
+  --sig:#e8461e; --fill:#e5e1d6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141412; --ink:#ece8de; --dim:#8f8a7f; --rule:#ece8de; --hair:#36342f;
+    --sig:#ff6a3d; --fill:#1d1c19;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141412; --ink:#ece8de; --dim:#8f8a7f; --rule:#ece8de; --hair:#36342f;
+  --sig:#ff6a3d; --fill:#1d1c19;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 "Archivo",system-ui,sans-serif;font-stretch:100%}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--sig);text-underline-offset:3px;text-decoration-thickness:2px}
+a:hover{color:var(--sig)}
+.m{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;letter-spacing:.02em}
+.sheet{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* document header strip */
+.strip{display:grid;grid-template-columns:1fr auto auto auto;border-bottom:2px solid var(--rule)}
+.strip>div{padding:10px 14px;border-left:1px solid var(--rule)}
+.strip>div:first-child{border-left:0;padding-left:0}
+.strip b{display:block;font-weight:500;color:var(--ink)}
+.strip span{color:var(--dim)}
+@media (max-width:700px){.strip{grid-template-columns:1fr 1fr}.strip>div:nth-child(3){border-left:0;padding-left:0}.strip>div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* masthead */
+.mast{padding:56px 0 0;border-bottom:2px solid var(--rule)}
+.mast h1{margin:0;font-weight:900;font-stretch:62%;text-transform:uppercase;line-height:.82;letter-spacing:-.01em;font-size:clamp(64px,14vw,190px)}
+.mast-top>h1{min-width:0}
+.mast h1 .sig{color:var(--sig)}
+.mast-row{display:grid;grid-template-columns:1.3fr 1fr;gap:0;margin-top:36px;border-top:1px solid var(--rule)}
+.mast-row>div{padding:22px 24px 26px 0}
+.mast-row>div+div{border-left:1px solid var(--rule);padding-left:24px;padding-right:0}
+.lede{font-size:clamp(19px,2.4vw,24px);line-height:1.35;font-stretch:88%;font-weight:500;margin:0}
+.spec{width:100%;border-collapse:collapse}
+.spec td{padding:6px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+.spec tr:last-child td{border-bottom:0}
+.spec td:first-child{color:var(--dim);width:42%}
+@media (max-width:760px){.mast-row{grid-template-columns:1fr}.mast-row>div+div{border-left:0;border-top:1px solid var(--rule);padding-left:0}}
+
+.mast-top{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px}
+.photo{margin:0;width:clamp(120px,18vw,190px)}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:grayscale(1) contrast(1.05);border:2px solid var(--rule)}
+.photo figcaption{margin-top:6px;color:var(--dim)}
+@media (max-width:560px){.mast-top{grid-template-columns:1fr}.photo{order:-1;width:130px}}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--rule)}
+.nums>div{padding:20px 16px 18px;border-left:1px solid var(--rule)}
+.nums>div:first-child{border-left:0;padding-left:0}
+.nums b{display:block;font-weight:800;font-stretch:62%;font-size:64px;line-height:.9}
+.nums b sup{font-size:.4em;color:var(--sig);vertical-align:top;margin-left:2px}
+.nums span{display:block;margin-top:8px}
+@media (max-width:700px){.nums{grid-template-columns:1fr 1fr}.nums>div:nth-child(3){border-left:0;padding-left:0}.nums>div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* sections */
+.sec{border-bottom:2px solid var(--rule)}
+.sec>header{display:flex;align-items:baseline;gap:16px;padding:28px 0 16px}
+.sec>header .no{color:var(--sig);font-weight:500}
+.sec>header h2{margin:0;font-weight:800;font-stretch:62%;text-transform:uppercase;font-size:44px;line-height:.92}
+.sec>.body{padding:0 0 32px;min-width:0}
+/* capabilities matrix */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.cap{padding:16px 16px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.cap .m{color:var(--dim)}
+.cap h3{margin:4px 0 6px;font-size:19px;font-weight:700;font-stretch:80%}
+.cap p{margin:0;font-size:14.5px;color:var(--dim)}
+.cap:hover{background:var(--fill)}
+@media (max-width:860px){.caps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.caps{grid-template-columns:1fr}}
+
+/* experience log */
+.log{border-top:1px solid var(--rule)}
+.entry{display:grid;grid-template-columns:118px 1fr;border-bottom:1px solid var(--rule)}
+.entry:last-child{border-bottom:0}
+.entry .when{padding:16px 12px 16px 0;border-right:1px solid var(--hair)}
+.entry .when b{display:block;font-weight:500}
+.entry .what{padding:14px 0 18px 18px}
+.entry h3{margin:0;font-size:22px;font-weight:800;font-stretch:75%;line-height:1.1}
+.entry .role{margin:4px 0 10px;color:var(--sig)}
+.entry p{margin:0 0 8px}
+.entry ul{margin:0;padding:0;list-style:none}
+.entry li{position:relative;padding-left:18px;margin:4px 0;color:var(--dim)}
+.entry li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:2px;background:var(--sig)}
+.entry li strong{color:var(--ink);font-weight:600}
+.stack{margin-top:10px;color:var(--dim)}
+.stack::before{content:"STACK / ";color:var(--ink)}
+@media (max-width:600px){.entry{grid-template-columns:1fr}.entry .when{border-right:0;border-bottom:1px dashed var(--hair);padding:12px 0 8px;display:flex;gap:10px}.entry .what{padding:12px 0 16px}}
+
+/* skills table */
+.skt{width:100%;border-collapse:collapse;border-top:1px solid var(--rule)}
+.skt th,.skt td{text-align:left;vertical-align:top;padding:11px 0;border-bottom:1px solid var(--hair)}
+.skt th{width:170px;font-weight:500;padding-right:16px}
+.skt tr:last-child th,.skt tr:last-child td{border-bottom:0}
+.chip{display:inline-block;padding:2px 8px;margin:0 4px 5px 0;border:1px solid var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12.5px}
+@media (max-width:600px){.skt th{display:block;width:auto;border-bottom:0;padding-bottom:4px}.skt td{display:block;padding-top:0}}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cols>div{padding-right:24px}
+.cols>div+div{border-left:1px solid var(--hair);padding-left:24px;padding-right:0}
+.ed{padding:0 0 14px;margin-bottom:14px;border-bottom:1px solid var(--hair)}
+.ed:last-child{border-bottom:0;margin-bottom:0}
+.ed h3{margin:0;font-size:17px;font-weight:700;font-stretch:85%}
+.ed p{margin:3px 0 0;color:var(--dim);font-size:15px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}.cols>div+div{border-left:0;padding-left:0;border-top:1px solid var(--hair);padding-top:14px}.cols>div{padding-right:0}}
+
+/* contact */
+.contact{padding:44px 0 30px;border-bottom:2px solid var(--rule)}
+.contact .big{display:block;font-weight:900;font-stretch:62%;text-transform:uppercase;font-size:clamp(40px,9vw,110px);line-height:.88;text-decoration:none;word-break:break-word}
+.contact .big:hover{color:var(--sig)}
+.contact .big .arr{color:var(--sig)}
+.contact p{margin:16px 0 0;max-width:560px;color:var(--dim)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:14px 0 40px;color:var(--dim)}
+
+/* language */
+html[lang="de"] .mast h1{font-size:clamp(58px,12vw,160px)}
+html[lang="de"] .en{display:none!important}
+html:not([lang="de"]) .de{display:none!important}
+.langs{display:flex;align-items:center;gap:0;padding-right:0!important}
+.langs button{font:inherit;background:none;color:var(--dim);border:1px solid var(--rule);padding:6px 10px;cursor:pointer}
+.langs button+button{border-left:0}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.strip{grid-template-columns:1fr auto auto auto auto!important}
+@media (max-width:700px){.strip{grid-template-columns:1fr 1fr!important}.strip>div{border-left:0!important;padding-left:0!important;border-top:1px solid var(--rule)}.strip>div:nth-child(-n+2){border-top:0}.strip>div:nth-child(even){border-left:1px solid var(--rule)!important;padding-left:14px!important}.langs{grid-column:1/-1;justify-content:flex-start;padding:10px 0!important;border-left:0!important}}
+
+/* screenshots */
+.snaps{margin-top:6px;color:var(--dim)}
+.snaps .lbl{color:var(--ink)}
+.snaps button{font:inherit;background:none;border:0;padding:0;margin-right:10px;color:var(--ink);cursor:zoom-in}
+.snaps .t{text-decoration:underline;text-decoration-color:var(--sig);text-underline-offset:3px;text-decoration-thickness:2px}
+.snaps button:hover{color:var(--sig)}
+.snaps button::before{content:"▸";color:var(--sig);margin-right:4px}
+dialog.lb{padding:0;border:2px solid var(--rule);background:var(--paper);max-width:min(1400px,96vw);max-height:94vh}
+dialog.lb::backdrop{background:rgba(10,10,10,.82)}
+dialog.lb img{display:block;max-width:100%;max-height:calc(94vh - 44px);height:auto}
+dialog.lb .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 12px;border-top:1px solid var(--rule)}
+dialog.lb .nav{display:flex;gap:6px;flex-shrink:0}
+dialog.lb button{font:inherit;background:none;border:1px solid var(--rule);color:var(--ink);padding:4px 10px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="strip m">
+    <div><b>JAN VRATISLAV</b><span class="en">Freelance software developer</span><span class="de">Freelance Softwareentwickler</span></div>
+    <div><b><span class="en">Prague, CZ</span><span class="de">Prag, CZ</span></b><span>Remote, CET</span></div>
+    <div><b><a href="https://github.com/honzajscz">GitHub</a></b><span>@honzajscz</span></div>
+    <div><b><a href="https://www.linkedin.com/in/vratislav/">LinkedIn</a></b><span>/in/vratislav</span></div>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="de">DE</button>
+    </div>
+  </div>
+
+  <section class="mast">
+    <div class="mast-top">
+      <h1>.NET<br><span class="en">Developer</span><span class="de">Entwickler</span><span class="sig">.</span></h1>
+      <figure class="photo"><img src="data:image/jpeg;base64,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" alt="Jan Vratislav" width="190" height="190"></figure>
+    </div>
+    <div class="mast-row">
+      <div>
+        <p class="lede en">Senior .NET developer with 15+ years across the whole stack: web, desktop, mobile, back-end services, databases, Azure and DevOps. I take software from first prototype to production, migrate legacy systems to modern .NET and automate how teams build and ship.</p>
+        <p class="lede de">Senior .NET-Entwickler mit über 15 Jahren Erfahrung im gesamten Stack: Web, Desktop, Mobile, Backend-Services, Datenbanken, Azure und DevOps. Ich bringe Software vom ersten Prototyp bis in die Produktion, migriere Altsysteme auf modernes .NET und automatisiere, wie Teams Software bauen und ausliefern.</p>
+      </div>
+      <div>
+        <table class="spec m">
+          <tr><td><span class="en">Primary stack</span><span class="de">Haupt-Stack</span></td><td>C#, .NET 10, ASP.NET Core</td></tr>
+          <tr><td><span class="en">Platforms</span><span class="de">Plattformen</span></td><td><span class="en">Web, desktop, mobile, server</span><span class="de">Web, Desktop, Mobile, Server</span></td></tr>
+          <tr><td>Cloud</td><td>Microsoft Azure</td></tr>
+          <tr><td><span class="en">Engagement</span><span class="de">Zusammenarbeit</span></td><td><span class="en">Freelance, remote</span><span class="de">Freelance, remote</span></td></tr>
+          <tr><td><span class="en">Languages</span><span class="de">Sprachen</span></td><td><span class="en">English, German, Czech</span><span class="de">Deutsch, Englisch, Tschechisch</span></td></tr>
+          <tr><td><span class="en">Contact</span><span class="de">Kontakt</span></td><td><a href="mailto:jan.vratislav@gmail.com">jan.vratislav@gmail.com</a></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="nums">
+    <div><b>15<sup>+</sup></b><span class="m en">years shipping .NET</span><span class="m de">Jahre .NET in Produktion</span></div>
+    <div><b>12</b><span class="m en">years with one Swiss client</span><span class="m de">Jahre bei einem Schweizer Kunden</span></div>
+    <div><b>5</b><span class="m en">countries of client teams (CH, US, UK, IN, CZ)</span><span class="m de">Länder in Kundenteams (CH, US, UK, IN, CZ)</span></div>
+    <div><b>AZ<sup>400</sup></b><span class="m">Microsoft DevOps Engineer Expert</span></div>
+  </div>
+
+  <section class="sec" id="capabilities">
+    <header><div class="no m">§ 01</div><h2 class="en">Capabilities</h2><h2 class="de">Leistungen</h2></header>
+    <div class="body">
+      <div class="caps">
+        <div class="cap"><span class="m">01.1</span><h3>Web &amp; APIs</h3>
+          <p class="en">ASP.NET Core, Blazor, MVC, Razor and Web API back ends, Angular front ends. Hosted on IIS, Docker or Azure.</p>
+          <p class="de">ASP.NET Core, Blazor, MVC, Razor und Web-API-Backends, Angular-Frontends. Betrieb auf IIS, Docker oder Azure.</p></div>
+        <div class="cap"><span class="m">01.2</span><h3>Desktop &amp; Mobile</h3>
+          <p class="en">WPF, WinUI and the Uno Platform for Windows, web and mobile from one codebase.</p>
+          <p class="de">WPF, WinUI und die Uno Platform für Windows, Web und Mobile aus einer Codebasis.</p></div>
+        <div class="cap"><span class="m">01.3</span><h3 class="en">Services &amp; data</h3><h3 class="de">Services &amp; Daten</h3>
+          <p class="en">Windows services, WCF, REST, messaging, MS SQL Server design, hardware and device integration.</p>
+          <p class="de">Windows-Dienste, WCF, REST, Messaging, MS-SQL-Server-Design, Hardware- und Geräteanbindung.</p></div>
+        <div class="cap"><span class="m">01.4</span><h3>Cloud &amp; DevOps</h3>
+          <p class="en">Azure, CI/CD in Azure DevOps and Jenkins, infrastructure as code with Terraform CDK and Pulumi.</p>
+          <p class="de">Azure, CI/CD mit Azure DevOps und Jenkins, Infrastructure as Code mit Terraform CDK und Pulumi.</p></div>
+        <div class="cap"><span class="m">01.5</span><h3 class="en">Migrations</h3><h3 class="de">Migrationen</h3>
+          <p class="en">Legacy applications moved to modern .NET and new UI stacks, large codebases refactored safely.</p>
+          <p class="de">Altanwendungen auf modernes .NET und neue UI-Technologien migriert, grosse Codebasen sicher refaktoriert.</p></div>
+        <div class="cap"><span class="m">01.6</span><h3 class="en">Automation</h3><h3 class="de">Automatisierung</h3>
+          <p class="en">PowerShell, build optimisation and test automation that give teams hours back every day.</p>
+          <p class="de">PowerShell, Build-Optimierung und Testautomatisierung, die Teams täglich Stunden sparen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <header><div class="no m">§ 02</div><h2 class="en">Experience</h2><h2 class="de">Erfahrung</h2></header>
+    <div class="body">
+      <div class="log">
+
+        <div class="entry">
+          <div class="when m"><b><span class="en">Current</span><span class="de">Aktuell</span></b><span>Bern, CH</span></div>
+          <div class="what">
+            <h3>Symlab AG</h3>
+            <div class="role m">Senior .NET Developer · remote</div>
+            <p class="en">Lead developer of RF Studio, a web application for monitoring and configuring fleets of networked devices for a Swiss hardware manufacturer.</p>
+            <p class="de">Leitender Entwickler von RF Studio, einer Webanwendung zur Überwachung und Konfiguration vernetzter Geräteflotten für einen Schweizer Hardwarehersteller.</p>
+            <ul class="en">
+              <li><strong>Project crisis management:</strong> took over a troubled project, stabilised it and brought it back on track</li>
+              <li><strong>Migration of a legacy C++/Qt application</strong> to a modern Blazor Server application on .NET 10</li>
+              <li><strong>Close collaboration with the hardware team</strong> on requirements, device protocols and overall design</li>
+              <li>Real-time dashboards, configuration management and device communication services</li>
+              <li><strong>Jammer Tester:</strong> automated production test station that drives signal generators, spectrum analysers and power supplies, runs test templates and produces PASS/FAIL reports</li>
+              <li>Earlier engagement (2023–2024): indoor device-location software, from a WPF proof of concept to a production app with a minimal API back end</li>
+            </ul>
+            <ul class="de">
+              <li><strong>Krisenmanagement im Projekt:</strong> Übernahme eines kriselnden Projekts, Stabilisierung und Rückführung auf Kurs</li>
+              <li><strong>Migration einer bestehenden C++/Qt-Anwendung</strong> auf eine moderne Blazor-Server-Anwendung mit .NET 10</li>
+              <li><strong>Enge Zusammenarbeit mit dem Hardware-Team</strong> bei Anforderungen, Geräteprotokollen und Gesamtdesign</li>
+              <li>Echtzeit-Dashboards, Konfigurationsmanagement und Services für die Gerätekommunikation</li>
+              <li><strong>Jammer Tester:</strong> automatisierter Produktionsprüfplatz, der Signalgeneratoren, Spektrumanalysatoren und Netzteile steuert, Testvorlagen ausführt und PASS/FAIL-Berichte erstellt</li>
+              <li>Früheres Projekt (2023–2024): Software zur Ortung von Geräten in Gebäuden, vom WPF-Prototyp bis zur produktiven App mit Minimal-API-Backend</li>
+            </ul>
+            <div class="stack m">.NET 10, Blazor Server, ASP.NET Core, WPF, C++/Qt migration, instrument control</div>
+            <div class="snaps m"><span class="lbl"><span class="en">SCREENSHOTS</span><span class="de">SCREENSHOTS</span> / </span><button type="button" data-full="img/rfstudio-operations.webp" data-group="symlab"><span class="t">RF Studio · Operations</span><span class="c" hidden><span class="en">RF Studio: operations overview with device groups, live status and alarms</span><span class="de">RF Studio: Betriebsübersicht mit Gerätegruppen, Live-Status und Alarmen</span></span></button> <button type="button" data-full="img/rfstudio-tuning.webp" data-group="symlab"><span class="t">RF Studio · Configuration</span><span class="c" hidden><span class="en">RF Studio: device configuration with live spectrum and waterfall</span><span class="de">RF Studio: Gerätekonfiguration mit Live-Spektrum und Wasserfall</span></span></button> <button type="button" data-full="img/jammer-tester.webp" data-group="symlab"><span class="t">Jammer Tester</span><span class="c" hidden><span class="en">Jammer Tester: test groups and instrument status</span><span class="de">Jammer Tester: Testgruppen und Gerätestatus</span></span></button> <button type="button" data-full="img/jammer-tester-report.webp" data-group="symlab"><span class="t">Test report</span><span class="c" hidden><span class="en">Jammer Tester: generated test report with limits and measurements</span><span class="de">Jammer Tester: generierter Prüfbericht mit Grenzwerten und Messwerten</span></span></button></div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="when m"><b>04/2024 – 03/2026</b><span>Prague / GA, US</span></div>
+          <div class="what">
+            <h3>Kahua Inc.</h3>
+            <div class="role m">.NET Host Developer</div>
+            <p class="en">C# and XAML platform components and services for internal teams and external clients of a construction project management platform.</p>
+            <p class="de">C#- und XAML-Plattformkomponenten und Services für interne Teams und externe Kunden einer Plattform für Bauprojektmanagement.</p>
+            <ul class="en">
+              <li>Extended the ASP.NET Core Web API backend</li>
+              <li>Cross-platform UI with WinUI and the Uno Platform</li>
+            </ul>
+            <ul class="de">
+              <li>Erweiterung des ASP.NET-Core-Web-API-Backends</li>
+              <li>Plattformübergreifende UI mit WinUI und der Uno Platform</li>
+            </ul>
+            <div class="stack m">C#, ASP.NET Core, WinUI, Uno Platform</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="when m"><b>2022 – 2023</b><span>NY / London</span></div>
+          <div class="what">
+            <h3>Barclays Corporate &amp; Investment Bank</h3>
+            <div class="role m">.NET Developer</div>
+            <p class="en">Internal service-oriented trading application, distributed team across the USA, UK and India.</p>
+            <p class="de">Interne serviceorientierte Handelsanwendung, verteiltes Team in den USA, Grossbritannien und Indien.</p>
+            <ul class="en">
+              <li><strong>Reworked the build process to run four times faster</strong>, for every developer on the codebase</li>
+              <li>New features, code quality and testing in a large existing codebase</li>
+            </ul>
+            <ul class="de">
+              <li><strong>Build-Prozess überarbeitet und viermal schneller gemacht</strong>, für alle Entwickler im Projekt</li>
+              <li>Neue Features, Codequalität und Tests in einer grossen bestehenden Codebasis</li>
+            </ul>
+            <div class="stack m">WPF, Windows Services, Solace Messaging</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="when m"><b>2010 – 2022</b><span>Burgdorf, CH</span></div>
+          <div class="what">
+            <h3 class="en">VertiGIS (formerly GEOCOM Informatik)</h3><h3 class="de">VertiGIS (ehemals GEOCOM Informatik)</h3>
+            <div class="role m">.NET &amp; DevOps Engineer · remote</div>
+            <p class="en">Twelve years designing, building and testing GIS applications on Microsoft technologies and Esri ArcGIS in a Scrum team.</p>
+            <p class="de">Zwölf Jahre Konzeption, Entwicklung und Test von GIS-Anwendungen auf Basis von Microsoft-Technologien und Esri ArcGIS in einem Scrum-Team.</p>
+            <ul class="en">
+              <li>Led a small group of developers</li>
+              <li><strong>Head of the internal DevOps team:</strong> build infrastructure (Jenkins, Azure DevOps), CI/CD and infrastructure as code on Azure</li>
+              <li>Took teams from manual releases to fully automated CI/CD</li>
+            </ul>
+            <ul class="de">
+              <li>Leitung einer kleinen Entwicklergruppe</li>
+              <li><strong>Leiter des internen DevOps-Teams:</strong> Build-Infrastruktur (Jenkins, Azure DevOps), CI/CD und Infrastructure as Code auf Azure</li>
+              <li>Teams von manuellen Releases zu vollautomatisiertem CI/CD geführt</li>
+            </ul>
+            <div class="stack m">.NET, Esri ArcGIS, Azure DevOps, Jenkins, PowerShell, IaC</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="when m"><b>2014 / 2017</b><span><span class="en">Switzerland</span><span class="de">Schweiz</span></span></div>
+          <div class="what">
+            <h3>K-Technik, COMLAB, Villiger Security</h3>
+            <div class="role m"><span class="en">.NET Developer &amp; Architect · side projects</span><span class="de">.NET-Entwickler &amp; Architekt · Nebenprojekte</span></div>
+            <ul class="en">
+              <li><strong>Legacy migration (2014):</strong> ported a Windows XP application for hardware communication and data management to C# and WPF, including database design</li>
+              <li><strong>Test automation (2017):</strong> WPF application verifying electronic components by orchestrating lab instruments, owned end to end from UX to release</li>
+            </ul>
+            <ul class="de">
+              <li><strong>Legacy-Migration (2014):</strong> Portierung einer Windows-XP-Anwendung für Hardwarekommunikation und Datenverwaltung nach C# und WPF, inklusive Datenbankdesign</li>
+              <li><strong>Testautomatisierung (2017):</strong> WPF-Anwendung zur Prüfung elektronischer Komponenten durch Steuerung von Messgeräten, komplett verantwortet von UX bis Release</li>
+            </ul>
+            <div class="stack m">C#, WPF, MS SQL, REST, <span class="en">hardware integration</span><span class="de">Hardwareanbindung</span></div>
+            <div class="snaps m"><span class="lbl"><span class="en">SCREENSHOTS</span><span class="de">SCREENSHOTS</span> / </span><button type="button" data-full="img/villiger-scm2.webp" data-group="villiger"><span class="t">Villiger SCM 2</span><span class="c" hidden><span class="en">Villiger SCM 2, migrated from Windows XP to WPF</span><span class="de">Villiger SCM 2, migriert von Windows XP nach WPF</span></span></button></div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="when m"><b>2020</b><span><span class="en">Prague</span><span class="de">Prag</span></span></div>
+          <div class="what">
+            <h3>Sídliště solidarita</h3>
+            <div class="role m"><span class="en">Volunteer developer</span><span class="de">Ehrenamtlicher Entwickler</span></div>
+            <p class="en">Built and deployed the non-profit's community website, <a href="https://www.sidlistesolidarita.cz">sidlistesolidarita.cz</a>.</p>
+            <p class="de">Entwicklung und Betrieb der Community-Website des gemeinnützigen Vereins, <a href="https://www.sidlistesolidarita.cz">sidlistesolidarita.cz</a>.</p>
+            <div class="stack m">ASP.NET Core, Piranha CMS, Docker, Linux</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="when m"><b>2011</b><span>Open source</span></div>
+          <div class="what">
+            <h3>Visual Profiler</h3>
+            <div class="role m"><span class="en">Master thesis · Dean's Award</span><span class="de">Masterarbeit · Preis des Dekans</span></div>
+            <p class="en">A .NET CLR performance profiler integrated into Visual Studio. <a href="https://github.com/honzajscz/visual_profiler">Source and demo on GitHub</a>.</p>
+            <p class="de">Ein .NET-CLR-Performance-Profiler mit Integration in Visual Studio. <a href="https://github.com/honzajscz/visual_profiler">Quellcode und Demo auf GitHub</a>.</p>
+            <div class="stack m">CLR Profiling API, multithreading, VS extensibility</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <header><div class="no m">§ 03</div><h2 class="en">Toolbox</h2><h2 class="de">Werkzeuge</h2></header>
+    <div class="body">
+      <table class="skt">
+        <tr><th class="m"><span class="en">Languages</span><span class="de">Sprachen</span></th><td><span class="chip">C#</span><span class="chip">XAML</span><span class="chip">SQL</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span><span class="chip">PowerShell</span></td></tr>
+        <tr><th class="m">Web</th><td><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">MVC / Razor</span><span class="chip">Web API</span><span class="chip">Angular</span></td></tr>
+        <tr><th class="m">Desktop / Mobile</th><td><span class="chip">WPF</span><span class="chip">WinUI</span><span class="chip">Uno Platform</span></td></tr>
+        <tr><th class="m"><span class="en">Services / data</span><span class="de">Services / Daten</span></th><td><span class="chip">MS SQL Server</span><span class="chip">IIS</span><span class="chip">Windows Server</span><span class="chip">Windows Services</span><span class="chip">WCF</span><span class="chip">REST</span><span class="chip">Solace</span></td></tr>
+        <tr><th class="m">Cloud / DevOps</th><td><span class="chip">Azure</span><span class="chip">Azure DevOps</span><span class="chip">Jenkins</span><span class="chip">Docker</span><span class="chip">Terraform CDK</span><span class="chip">Pulumi</span><span class="chip">SonarQube</span><span class="chip">Git</span></td></tr>
+        <tr><th class="m"><span class="en">Practice</span><span class="de">Arbeitsweise</span></th><td><span class="en">Clean, testable architecture, domain-driven design, multithreaded and performance-critical code, refactoring legacy systems, NUnit and Moq, Scrum.</span><span class="de">Saubere, testbare Architektur, Domain-Driven Design, nebenläufiger und performancekritischer Code, Refactoring von Altsystemen, NUnit und Moq, Scrum.</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" id="education">
+    <header><div class="no m">§ 04</div><h2 class="en">Education</h2><h2 class="de">Ausbildung</h2></header>
+    <div class="body">
+      <div class="cols">
+        <div>
+          <div class="ed"><h3 class="en">MSc Computer Science, 2012</h3><h3 class="de">MSc Informatik, 2012</h3>
+            <p class="en">Czech Technical University in Prague. Dean's Award for outstanding master thesis.</p>
+            <p class="de">Tschechische Technische Universität Prag. Preis des Dekans für herausragende Masterarbeit.</p></div>
+          <div class="ed"><h3 class="en">BSc Computer Science &amp; Electronics, 2008</h3><h3 class="de">BSc Informatik &amp; Elektronik, 2008</h3>
+            <p class="en">Czech Technical University in Prague. Graduated with distinction.</p>
+            <p class="de">Tschechische Technische Universität Prag. Abschluss mit Auszeichnung.</p></div>
+        </div>
+        <div>
+          <div class="ed"><h3>Microsoft Certified: DevOps Engineer Expert</h3><p>AZ-400 · Microsoft Certified Professional</p></div>
+          <div class="ed"><h3 class="en">Studies and internships abroad</h3><h3 class="de">Studium und Praktika im Ausland</h3>
+            <p class="en">Three years in the USA, Singapore, Germany, Spain and Switzerland.</p>
+            <p class="de">Drei Jahre in den USA, Singapur, Deutschland, Spanien und der Schweiz.</p></div>
+          <div class="ed"><h3 class="en">Languages</h3><h3 class="de">Sprachen</h3>
+            <p class="en">Czech native · English C2 · German C1</p>
+            <p class="de">Tschechisch Muttersprache · Englisch C2 · Deutsch C1</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="m" style="color:var(--sig);margin-bottom:14px"><span class="en">§ 05 · Available for new projects</span><span class="de">§ 05 · Offen für neue Projekte</span></div>
+    <a class="big" href="mailto:jan.vratislav@gmail.com"><span class="en">Write me</span><span class="de">Schreiben Sie mir</span> <span class="arr">→</span></a>
+    <p class="en">Remote .NET projects of any kind: web, desktop, mobile, back end, cloud or migrations. English, German or Czech.</p>
+    <p class="de">Remote-.NET-Projekte jeder Art: Web, Desktop, Mobile, Backend, Cloud oder Migrationen. Auf Deutsch, Englisch oder Tschechisch.</p>
+  </section>
+
+  <footer class="m">
+    <span>© <span id="y">2026</span> Jan Vratislav</span>
+    <span><a href="mailto:jan.vratislav@gmail.com">jan.vratislav@gmail.com</a> · <a href="https://github.com/honzajscz">GitHub</a> · <a href="https://www.linkedin.com/in/vratislav/">LinkedIn</a></span>
+  </footer>
+</div>
+<dialog class="lb" id="lb"><img alt=""><div class="bar m"><span class="lbcap"></span><span class="nav"><button type="button" data-prev aria-label="Previous">←</button><span class="cnt"></span><button type="button" data-next aria-label="Next">→</button><button type="button" data-close aria-label="Close">✕</button></span></div></dialog>
+<script>
+(function(){
+  var META={
+    en:{title:"Jan Vratislav · .NET Developer",desc:"Jan Vratislav, senior .NET developer and freelancer in Prague. Web, desktop, mobile, databases, services, Azure, DevOps and migrations."},
+    de:{title:"Jan Vratislav · .NET-Entwickler",desc:"Jan Vratislav, Senior .NET-Entwickler und Freelancer in Prag. Web, Desktop, Mobile, Datenbanken, Services, Azure, DevOps und Migrationen."}
+  };
+  function setLang(l,save){
+    if(!META[l]) l="en";
+    document.documentElement.lang=l;
+    document.title=META[l].title;
+    var d=document.querySelector('meta[name="description"]'); if(d) d.content=META[l].desc;
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.setLang===l)});
+    if(save){try{localStorage.setItem('lang',l)}catch(e){}
+      var u=new URL(location.href); if(l==='de') u.searchParams.set('lang','de'); else u.searchParams.delete('lang'); history.replaceState(null,'',u);}
+  }
+  var q=new URLSearchParams(location.search).get('lang'), s=null;
+  try{s=localStorage.getItem('lang')}catch(e){}
+  var nav=(navigator.language||'').toLowerCase().indexOf('de')===0?'de':'en';
+  setLang(q||s||nav,false);
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.setLang,true)})});
+  var lb=document.getElementById('lb'),cur=[],idx=0;
+  function show(){var b=cur[idx];lb.querySelector('img').src=b.dataset.full;lb.querySelector('img').alt=b.querySelector('.t').textContent;
+    lb.querySelector('.lbcap').innerHTML=b.querySelector('.c').innerHTML;lb.querySelector('.cnt').textContent=(idx+1)+' / '+cur.length;
+    lb.querySelector('[data-prev]').hidden=lb.querySelector('[data-next]').hidden=cur.length<2;}
+  document.querySelectorAll('[data-full]').forEach(function(b){b.addEventListener('click',function(){
+    cur=[].slice.call(document.querySelectorAll('[data-group="'+b.dataset.group+'"]'));idx=cur.indexOf(b);show();
+    if(lb.showModal) lb.showModal(); else window.open(b.dataset.full);})});
+  lb.querySelector('[data-prev]').addEventListener('click',function(){idx=(idx-1+cur.length)%cur.length;show()});
+  lb.querySelector('[data-next]').addEventListener('click',function(){idx=(idx+1)%cur.length;show()});
+  lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){idx=(idx-1+cur.length)%cur.length;show()}if(e.key==='ArrowRight'){idx=(idx+1)%cur.length;show()}});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.hasAttribute('data-close')) lb.close();});
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+
+</html>
